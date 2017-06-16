@@ -1,0 +1,15 @@
+import numpy as np
+from keras.preprocessing.image import ImageDataGenerator
+from keras.models import Sequential
+from keras.layers import Dropout, Flatten, Dense
+from keras import applications
+from loadCataractData import *
+print "Loading Training Data.."
+X, y, img_width, img_height = load_X_y() #loading training data
+print "Training.."
+
+def save_bottlebeck_features():
+	# build the VGG16 network
+    	model = applications.VGG16(include_top=False, weights='imagenet')
+
+print "working"
